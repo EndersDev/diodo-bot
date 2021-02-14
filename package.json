@@ -1,0 +1,16 @@
+{
+  "name": "diodo-bot",
+  "version": "1.0.0",
+  "description": "A control of Studying Microeletronics Community",
+  "main": "main.ts",
+  "authors": [
+    "Filipe \"Ender\" Araujo",
+    "Paula\"NinjaSiano\""
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "deno_ls_plugin": "^0.1.0",
+    "typescript": "^4.1.5"
+  }
+}
