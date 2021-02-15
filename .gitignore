@@ -2,3 +2,7 @@ configs.ts
 db
 fileloader.ts
 node_modules
+package-lock.json
+yarn.lock
+.env
+.gitignore

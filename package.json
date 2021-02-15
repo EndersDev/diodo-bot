@@ -3,12 +3,20 @@
   "version": "1.0.0",
   "description": "A control of Studying Microeletronics Community",
   "main": "main.ts",
-  "authors": [
-    "Filipe \"Ender\" Araujo",
-    "Paula\"NinjaSiano\""
-  ],
+  "scripts": {
+    "start": "node main.js",
+    "dev": "nodemon main.js",
+    "build": "docker build -t  diodo-bot  .",
+    "serve": "docker run --rm -d -p 3000:3000 diodo-bot",
+    "docker": "yarn build && yarn serve"
+  },
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "discord.js": "^12.5.1"
+  },
+  "author": "Filipe \"Ender\" Araujo <death.enderman@gmail.com>",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
