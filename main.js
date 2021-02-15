@@ -1,3 +1,4 @@
+require('dotenv').config()
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
@@ -8,13 +9,13 @@ client.on('ready', () => {
 })
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
+  if (msg.content === '!ping') {
     msg.reply('Pong!')
   }
 })
 
 client.on('message', msg => {
-  if (msg.content === 'kengo') {
+  if (msg.content === '!kengo') {
     msg.reply('Você')
   }
 })

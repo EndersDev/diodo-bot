@@ -6,14 +6,16 @@
   "scripts": {
     "start": "node main.js",
     "dev": "nodemon main.js",
-    "build": "docker build -t  diodo-bot  .",
+    "image": "docker build -t  diodo-bot  .",
     "serve": "docker run --rm -d -p 3000:3000 diodo-bot",
-    "docker": "yarn build && yarn serve"
+    "docker": "yarn image && yarn serve",
+    "build": "npm install only=prod --quiet"
   },
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
   },
   "author": "Filipe \"Ender\" Araujo <death.enderman@gmail.com>",
   "devDependencies": {
