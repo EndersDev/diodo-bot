@@ -1,5 +1,7 @@
-require('dotenv').config()
-const Discord = require('discord.js')
+import dotenv from 'dotenv'
+import Discord from 'discord.js'
+
+dotenv.config()
 const client = new Discord.Client()
 const token = process.env.TOKEN //?? token_key
 
