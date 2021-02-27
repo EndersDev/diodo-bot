@@ -1,0 +1,11 @@
+{
+  "2": {
+    "voz": ["FIS.ELE", "CM", "CIR.ELE", "CALC.II", "RED.TEC", "QUIM.II", "TQC"],
+    "txt": ["fis-ele", "cm", "cir-ele", "calc-2", "red-tec", "quim-2", "tqc"]
+  },
+  "3": { "voz": [], "txt": [] },
+  "4": { "voz": [], "txt": [] },
+  "5": { "voz": [], "txt": [] },
+  "6": { "voz": [], "txt": [] },
+  "permissions": []
+}
