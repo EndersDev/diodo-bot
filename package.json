@@ -20,5 +20,6 @@
   "author": "Filipe \"Ender\" Araujo <death.enderman@gmail.com>",
   "devDependencies": {
     "nodemon": "^2.0.7"
-  }
+  },
+  "type": "module"
 }
