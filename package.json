@@ -9,7 +9,7 @@
     "image": "docker build -t  diodo-bot  .",
     "serve": "docker run --rm -d -p 3000:3000 diodo-bot",
     "docker": "yarn image && yarn serve",
-    "build": "npm install only=prod --quiet"
+    "build": "yarn install"
   },
   "license": "MIT",
   "private": true,
