@@ -9,7 +9,7 @@
     "image": "docker build -t  diodo-bot  .",
     "serve": "docker run --rm -d -p 3000:3000 diodo-bot",
     "docker": "yarn image && yarn serve",
-    "build": "yarn install"
+    "build": "npm install only=prod --quiet"
   },
   "license": "MIT",
   "private": true,
@@ -20,5 +20,6 @@
   "author": "Filipe \"Ender\" Araujo <death.enderman@gmail.com>",
   "devDependencies": {
     "nodemon": "^2.0.7"
-  }
+  },
+  "type": "module"
 }
