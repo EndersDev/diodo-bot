@@ -21,61 +21,39 @@ const userFlags = ['VIEW_CHANNEL', 'CONNECT', 'SPEAK']
   'MANAGE_EMOJIS'
 ] */
 
-export const verifySem = ({ usuario, semestre, materia, addRemove }) => {
-  if (addRemove) {
-    switch (semestre) {
-      case process.env.SEM_1_ID:
-        console.log('1º SEMESTRE:')
-        console.log(semestre)
-        console.log('\n reaction:')
-        console.log(materia[0]) //if (react.emoji.name == '📐') console.log('sim :')
-        let perm = userFlags.reduce(
-          (obj, item) => ((obj[item] = addRemove), obj),
-          {}
-        )
-        //console.log(perm)
-        materia[1].updateOverwrite(usuario, perm)
-        break
+export const verifySem = ({
+  usuario,
+  semestre,
+  materias,
+  arNum,
+  addRemove
+}) => {
+  if (
+    semestre ===
+    (process.env.SEM_1_ID ||
+      process.env.SEM_2_ID ||
+      process.env.SEM_3_ID ||
+      process.env.SEM_4_ID ||
+      process.env.SEM_5_ID ||
+      process.env.SEM_6_ID ||
+      process.env.SEM_OPT_ID)
+  ) {
+    let perm = userFlags.reduce(
+      (obj, item) => ((obj[item] = addRemove), obj),
+      {}
+    )
 
-      case process.env.SEM_2_ID:
-        break
-      case process.env.SEM_3_ID:
-        break
-      case process.env.SEM_4_ID:
-        break
-      case process.env.SEM_5_ID:
-        break
-      case process.env.SEM_6_ID:
-        break
-      case process.env.SEM_OPT_ID:
-        break
-      default:
-        break
-    }
-  } else {
-    switch (semestre) {
-      case process.env.SEM_1_ID:
-        console.log('1º SEMESTRE:')
-        console.log(semestre)
-        console.log('\n reaction:')
-        console.log(materia[0]) //if (react.emoji.name == '📐') console.log('sim :')
-        verifyClass({ user: usuario, sem: 1, mat: materia[1], AR: addRemove })
-        break
+    console.log(perm)
+    //if (t.length > 1) console.log('\n array:', t[2].name)
+    //else console.log('\n array:', t[0].name)
 
-      case process.env.SEM_2_ID:
-        break
-      case process.env.SEM_3_ID:
-        break
-      case process.env.SEM_4_ID:
-        break
-      case process.env.SEM_5_ID:
-        break
-      case process.env.SEM_6_ID:
-        break
-      case process.env.SEM_OPT_ID:
-        break
-      default:
-        break
+    for (let i in materias) {
+      console.log(`[${i}]:${materias[i].name}`)
     }
+
+    console.log(`indice: ${arNum}`)
+    console.log(`user: ${usuario}`)
+
+    materias[arNum].updateOverwrite(usuario, perm)
   }
 }
