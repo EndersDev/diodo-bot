@@ -55,9 +55,9 @@ const emojiToClass = async ({ AR, react, user }) => {
       arNum: num,
       addRemove: AR
     })
-    /* if (!atualMember.roles.cache.get(process.env.ROLE_ELE)) {
+    if (!atualMember.roles.cache.get(process.env.ROLE_ELE)) {
       atualMember.roles.add(process.env.ROLE_ELE)
-    } */
+    }
   }
 }
 
