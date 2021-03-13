@@ -10,6 +10,6 @@ server.all('/', (req, res) => {
 })
 
 const keepRunning = () =>
-  server.listen(process.env.PORT ?? 3000, () => console.log('ready!!!'))
+  server.listen(process.env.PORT || 3000, () => console.log('ready!!!'))
 
 export default keepRunning
