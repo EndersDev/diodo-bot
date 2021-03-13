@@ -1,6 +1,7 @@
 import dotenv from 'dotenv'
 import Discord from 'discord.js'
 import { verifySem } from './materias.js'
+import keepRunning from './serve.js'
 
 dotenv.config()
 const client = new Discord.Client({
@@ -117,4 +118,6 @@ client.on('messageReactionAdd', async (react, user) => {
 client.on('messageReactionRemove', async (react, user) => {
   emojiToClass({ AR: false, react: react, user: user })
 })
+
+keepRunning()
 client.login(token)
