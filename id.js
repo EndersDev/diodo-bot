@@ -3,7 +3,8 @@ dotenv.config()
 
 export const CHNS = {
   ORG: process.env.ORG_CHN_ID,
-  REG: process.env.REG_CHN_ID
+  REG: process.env.REG_CHN_ID,
+  WC: process.env.WC_CHN_ID
 }
 
 export const SEM = [

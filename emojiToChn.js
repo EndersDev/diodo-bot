@@ -76,8 +76,10 @@ const emojiToChn = async ({ service, react, user }) => {
   targetChannels[num].updateOverwrite(reactUser, perm)
 
   //add role
-  if (!reactUser.roles.cache.find(role => role.name)) {
-    reactUser.roles.add(ROLE.ELE).catch(console.error)
+  if (service) {
+    if (!reactUser.roles.cache.find(role => role.name)) {
+      reactUser.roles.add(ROLE.ELE).catch(console.error)
+    }
   }
 }
 

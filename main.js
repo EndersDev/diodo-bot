@@ -19,19 +19,19 @@ client.once('ready', () => {
 })
 
 //EVENTS
-client.on('message', msg => {
+client.on('message', async (msg) => {
   if (msg.content === '!ping') {
     msg.reply('Pong!')
   }
 })
 
-client.on('message', msg => {
+client.on('message', async (msg) => {
   if (msg.content === '!kengo') {
     msg.reply('Você')
   }
 })
 
-client.on('message', msg => {
+client.on('message', async (msg) => {
   if (msg.content === '!delicinha') {
     msg.reply('Você é com certeza')
   }
@@ -51,25 +51,43 @@ client.on('messageReactionAdd', async (react, user) => {
     }
   }
 
-  await emojiToChn({ service: true, react: react, user: user }).catch(error => {
-    react.message
-      .reply(
-        `não foi possivel executar. \n comando: addReaction \n error: ${error}`
-      )
-      .then(msg => setTimeout(() => msg.delete(), 5000))
-  })
+  await emojiToChn({ service: true, react: react, user: user }).catch(
+    (error) => {
+      react.message
+        .reply(
+          `não foi possivel executar. \n comando: addReaction \n error: ${error}`
+        )
+        .then((msg) => setTimeout(() => msg.delete(), 5000))
+    }
+  )
 })
 
 client.on('messageReactionRemove', async (react, user) => {
   await emojiToChn({ service: false, react: react, user: user }).catch(
-    error => {
+    (error) => {
       react.message
         .reply(
           `não foi possivel executar. \n comando: removeReaction \n error: ${error}`
         )
-        .then(msg => setTimeout(() => msg.delete(), 5000))
+        .then((msg) => setTimeout(() => msg.delete(), 5000))
     }
   )
+})
+
+client.on('guildMemberAdd', async (member) => {
+  await welcomeBye({
+    service: true,
+    member: member,
+    client: client
+  })
+})
+
+client.on('guildMemberRemove', async (member) => {
+  await welcomeBye({
+    service: false,
+    member: member,
+    client: client
+  })
 })
 
 keepRunning()
