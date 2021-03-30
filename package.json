@@ -2,7 +2,7 @@
   "name": "diodo-bot",
   "version": "1.3.0",
   "description": "A control of Studying Microeletronics Community",
-  "main": "main.ts",
+  "main": "main.js",
   "scripts": {
     "start": "node main.js",
     "dev": "nodemon main.js",
